@@ -9,7 +9,9 @@ export default function Layout(){
             <Link to='/estadisticas'>Estadisticas</Link>
             <Link to='/contacto'>Contacto</Link>
         </nav>
-        <Outlet/>
+        <div className="container mx-auto">
+            <Outlet/>
+        </div>
         </>
     );
 }
