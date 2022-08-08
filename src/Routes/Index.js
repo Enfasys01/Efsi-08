@@ -1,19 +1,14 @@
-import { Link } from "react-router-dom"
+import Card from "../Components/Card"
 import Personas from "../Components/Personas"
 
 
 export default function Index(){
     return(
         <>
-        <h1>Index </h1>
+        <h1 className="font-semibold text-3xl my-2">Home </h1>
         <div className="grid sm:grid-cols-4 lg:grid-cols-8">
-        {Personas.map(e=>{return(
-            <div className="m-1 p-2 bg-zinc-200 rounded-md">
-                <ul>
-                    <li className="font-semibold hover:underline"><Link to={'/persona/'+e.id}>{e.nombre} {e.apellido}</Link> </li>
-                </ul>
-            </div>
-            
+        {Personas.map((e, index)=>{return(
+            <Card persona={e} key={index} onlyName/>
         )})}
         </div>
         </>
